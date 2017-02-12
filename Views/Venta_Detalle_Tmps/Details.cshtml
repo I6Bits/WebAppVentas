@@ -1,0 +1,42 @@
+﻿@model WebAppVentas.Models.Venta_Detalle_Tmp
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Venta_Detalle_Tmp</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Libro.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libro.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Venta_Detalle_Tmp_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebAppVentas.Models.Libro>
+
+@{
+    ViewBag.Title = "BusquedaFilter";
+}
+
+<h2>BusquedaFilter</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    <br/>
+    @Html.ActionLink("<< Index", "Index") |
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoria.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LibroID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LibroID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LibroID })
+        </td>
+    </tr>
+}
+
+</table>
