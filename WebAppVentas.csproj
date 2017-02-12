@@ -250,6 +250,7 @@
     <Content Include="Views\Venta_Detalle_Tmps\Edit.cshtml" />
     <Content Include="Views\Venta_Detalle_Tmps\Index.cshtml" />
     <Content Include="Views\Libros\BusquedaFilter.cshtml" />
+    <Content Include="Views\Venta_Detalle_Tmps\BusquedaFilter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

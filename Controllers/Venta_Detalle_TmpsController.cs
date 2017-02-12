@@ -42,6 +42,7 @@ namespace WebAppVentas.Controllers
         {
             ViewBag.ClienteID = new SelectList(db.Clientes, "ClienteID", "Username");
             ViewBag.LibroID = new SelectList(db.Libroes, "LibroID", "Titulo");
+
             return View();
         }
 
@@ -123,6 +124,16 @@ namespace WebAppVentas.Controllers
             db.Venta_Detalle_Tmp.Remove(venta_detalle_tmp);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult BusquedaFilter(String abc)
+        {
+            var libroes = from s in db.Venta_Detalle_Tmp select s;
+            if (!String.IsNullOrEmpty(abc))
+            {
+                libroes = libroes.Where(j => j.Libro.Titulo.Contains(abc));
+            }
+            return View(libroes.ToList());
         }
 
         protected override void Dispose(bool disposing)

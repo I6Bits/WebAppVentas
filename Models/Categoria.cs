@@ -10,6 +10,7 @@ namespace WebAppVentas.Models
     {
         [Key]
         public int CategoriaID { get; set; }
+        [Required(ErrorMessage = "{0} requerido")]
         public String Nombre { get; set; }
         public virtual ICollection<Libro> Libros { get; set; }
     }

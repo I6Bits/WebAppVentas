@@ -11,6 +11,8 @@ namespace WebAppVentas.Models
     {
         [Key]
         public int Venta_Detalle_Tmp_ID { get; set; }
+
+        [Required(ErrorMessage = "{0} requerida")]
         public int Cantidad { get; set; }
         public int ClienteID { get; set; }
         public int LibroID { get; set; }

@@ -10,7 +10,9 @@ namespace WebAppVentas.Models
     {
         [Key]
         public int ClienteID { get; set; }
+        [Required(ErrorMessage="{0} requerido")]
         public String Username { get; set; }
+        [Required(ErrorMessage = "{0} requerido")]
         public String Password { get; set; }
         public String Nombres { get; set; }
         public String Apellidos { get; set; }

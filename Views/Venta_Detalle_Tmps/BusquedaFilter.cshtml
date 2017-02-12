@@ -1,21 +1,17 @@
 ﻿@model IEnumerable<WebAppVentas.Models.Venta_Detalle_Tmp>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "BusquedaFilter";
 }
 
-<h2>Index</h2>
+<h2>BusquedaFilter</h2>
+
 
 <p>
     @Html.ActionLink("Create New", "Create")
-    @using (Html.BeginForm("BusquedaFilter", "Venta_Detalle_Tmps"))
-    {
-    <p>
-        Busqueda por Nombre: @Html.TextBox("abc") <br />
-        <input type="submit" value="BusquedaFilter" />
-    </p>
-    }
-    </p>
+    <br />
+    @Html.ActionLink("<< Index", "Index") |
+</p>
 <table class="table">
     <tr>
         <th>
@@ -26,9 +22,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Cantidad)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Subtotal)
         </th>
         <th></th>
     </tr>
@@ -43,9 +36,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Cantidad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Subtotal)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Venta_Detalle_Tmp_ID }) |
